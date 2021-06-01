@@ -6,14 +6,7 @@ function Layout({ children }) {
     <>
       <div>{children}</div>
       <nav>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/dogs">Dogs</Link>
-          </li>
-        </ul>
+        <Link href="/">Home</Link>
       </nav>
     </>
   );
