@@ -3,6 +3,7 @@ import axios from "axios";
 import DogCard from "./DogCard";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import dogNames from "dog-names";
 
 const useStyles = makeStyles({
   root: {
@@ -25,7 +26,7 @@ const DogData = () => {
   return (
     <Container className={classes.root}>
       {dogs.map((dogImage, index) => {
-        const name = "Buster";
+        const name = dogNames.allRandom();
         return <DogCard name={name} image={dogImage} key={index} />;
       })}
     </Container>
