@@ -3,6 +3,7 @@ import axios from "axios";
 import DogCard from "./DogCard";
 import { Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import dogNames from "dog-names";
 
 const useStyles = makeStyles({
   root: {
@@ -17,16 +18,17 @@ const DogData = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    axios("https://dog.ceo/api/breed/schnauzer/images/random/4").then((res) => {
+    axios("https://dog.ceo/api/breed/schnauzer/images/random/5").then((res) => {
       setDogs(res.data.message);
     });
   }, []);
 
   return (
     <Container className={classes.root}>
-      {dogs.map((dogImage, index) => (
-        <DogCard image={dogImage} key={index} />
-      ))}
+      {dogs.map((dogImage, index) => {
+        const name = dogNames.allRandom();
+        return <DogCard name={name} image={dogImage} key={index} />;
+      })}
     </Container>
   );
 };
