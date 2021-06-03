@@ -1,11 +1,15 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
+import DogData from "../components/DogData";
 
 function Dogs() {
   return (
-    <Typography variant="h1" align="center">
-      My Schnauzer Friends
-    </Typography>
+    <Container align="center">
+      <Typography variant="h2" align="center" paragraph="true">
+        Welcome to Schnauzer Friends
+      </Typography>
+      <DogData />
+    </Container>
   );
 }
 

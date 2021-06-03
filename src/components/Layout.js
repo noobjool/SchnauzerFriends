@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@material-ui/core";
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <>
       <div>{children}</div>
@@ -10,6 +10,6 @@ function Layout({ children }) {
       </nav>
     </>
   );
-}
+};
 
 export default Layout;
