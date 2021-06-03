@@ -17,16 +17,17 @@ const DogData = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    axios("https://dog.ceo/api/breed/schnauzer/images/random/4").then((res) => {
+    axios("https://dog.ceo/api/breed/schnauzer/images/random/5").then((res) => {
       setDogs(res.data.message);
     });
   }, []);
 
   return (
     <Container className={classes.root}>
-      {dogs.map((dogImage, index) => (
-        <DogCard image={dogImage} key={index} />
-      ))}
+      {dogs.map((dogImage, index) => {
+        const name = "Buster";
+        return <DogCard name={name} image={dogImage} key={index} />;
+      })}
     </Container>
   );
 };
