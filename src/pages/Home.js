@@ -1,13 +1,29 @@
 import React from "react";
-import { Container, Link } from "@material-ui/core";
-import billie from "../assets/billie.png";
+import { Button, Container } from "@material-ui/core";
+import PetsIcon from "@material-ui/icons/Pets";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  btn: {
+    margin: 20,
+  },
+});
 
 function Home() {
+  const classes = useStyles();
+
   return (
     <Container align="center">
-      <img src={billie} alt="Schnauzer" width="200px" />
-      <br />
-      <Link href="/dogs">Click to meet my friends</Link>
+      <Button
+        href="/dogs"
+        size="large"
+        variant="contained"
+        color="primary"
+        startIcon={<PetsIcon />}
+        className={classes.btn}
+      >
+        Click to meet my friends!
+      </Button>
     </Container>
   );
 }
