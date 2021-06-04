@@ -27,7 +27,14 @@ const DogData = () => {
     <Container className={classes.root}>
       {dogs.map((dogImage, index) => {
         const name = dogNames.allRandom();
-        return <DogCard name={name} image={dogImage} key={index} />;
+
+        const indexBreed = dogImage.indexOf("miniature");
+        const breed =
+          indexBreed > 0 ? "Miniature Schnauzer" : "Giant Schnauzer";
+
+        return (
+          <DogCard name={name} image={dogImage} breed={breed} key={index} />
+        );
       })}
     </Container>
   );

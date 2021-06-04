@@ -12,18 +12,18 @@ const useStyles = makeStyles({
   },
 });
 
-const DogCard = ({ image, name }) => {
+const DogCard = ({ name, image, breed }) => {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardMedia image={image} name={name} className={classes.media} />
+      <CardMedia image={image} className={classes.media} />
 
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {name}
         </Typography>
         <Typography variant="body2" color="textSecondary" component="p">
-          Breed
+          {breed}
         </Typography>
       </CardContent>
     </Card>
