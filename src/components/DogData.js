@@ -17,6 +17,10 @@ const DogData = () => {
   const [dogs, setDogs] = useState([]);
   const classes = useStyles();
 
+  const checkBreed = (text, breed) => {
+    return text.indexOf(breed) > 0;
+  };
+
   useEffect(() => {
     axios("https://dog.ceo/api/breed/schnauzer/images/random/5").then((res) => {
       setDogs(res.data.message);
@@ -27,7 +31,17 @@ const DogData = () => {
     <Container className={classes.root}>
       {dogs.map((dogImage, index) => {
         const name = dogNames.allRandom();
-        return <DogCard name={name} image={dogImage} key={index} />;
+        let breed = "Schnauzer";
+        if (checkBreed(dogImage, "miniature")) {
+          breed = "Miniature Schnauzer";
+        }
+        if (checkBreed(dogImage, "giant")) {
+          breed = "Giant Schnauzer";
+        }
+
+        return (
+          <DogCard name={name} image={dogImage} breed={breed} key={index} />
+        );
       })}
     </Container>
   );
