@@ -2,14 +2,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DogCard from "./DogCard";
 import { Container } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import dogNames from "dog-names";
+
+let theme = createMuiTheme();
 
 const useStyles = makeStyles({
   root: {
     display: "flex",
     justifyContent: "space-evenly",
     gap: 10,
+    [theme.breakpoints.down("xs")]: {
+      flexWrap: "wrap",
+    },
   },
 });
 
