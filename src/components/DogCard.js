@@ -1,14 +1,22 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { Card, CardContent, CardMedia, Typography } from "@material-ui/core";
+
+let theme = createMuiTheme();
 
 const useStyles = makeStyles({
   root: {
     borderRadius: 20,
     minWidth: 180,
+    [theme.breakpoints.down("xs")]: {
+      minWidth: 250,
+    },
   },
   media: {
     height: 180,
+    [theme.breakpoints.down("xs")]: {
+      height: 300,
+    },
   },
 });
 
