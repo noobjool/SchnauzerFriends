@@ -7,7 +7,7 @@ _”All you need is Love… and a Schnauzer!”_ - This is a project for all you
 
 ## Technologies Used
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with [React](https://reactjs.org) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### API
 
